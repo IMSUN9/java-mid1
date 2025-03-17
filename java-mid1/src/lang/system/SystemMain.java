@@ -1,5 +1,7 @@
 package lang.system;
 
+import java.util.Arrays;
+
 public class SystemMain {
     public static void main(String[] args) {
 
@@ -25,5 +27,9 @@ public class SystemMain {
 
         // 배열 출력
         System.out.println("copiedArray = " + copiedArray);
+        System.out.println("Arrays.toString = " + Arrays.toString(copiedArray));
+
+        // 프로그램 종료
+        System.exit(0);
     }
 }
