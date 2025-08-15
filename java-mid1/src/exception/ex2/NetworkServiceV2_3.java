@@ -1,0 +1,19 @@
+package exception.ex2;
+
+
+public class NetworkServiceV2_3 {
+
+    public void sendMessage(String data) {
+        String address = "http://example.com";
+        NetworkClientV2 client = new NetworkClientV2(address);
+        client.initError(data); //추가
+
+        try { // 정상 흐름 부분
+            client.connect();
+            client.send(data);
+            client.disconnect();
+        } catch (NetworkClientExceptionV2 e) { // 예외 부분
+            System.out.println("[오류] 코드: " + e.getErrorCode() + ", 메시지: " + e.getMessage());
+        }
+    }
+}
